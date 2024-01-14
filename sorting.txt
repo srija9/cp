@@ -1,0 +1,170 @@
+#quicksort
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Collections;
+
+public class Main
+{
+    public static int partition(ArrayList<Integer> a, int low, int high, int pivot){
+        int pIndex=low;
+        
+        for(int i=low; i<=high; i++){
+            if(a.get(i)<=pivot){
+                Collections.swap(a, pIndex, i);
+                pIndex++;
+            }
+        }
+        
+        pIndex--;
+        return pIndex;
+        
+    }
+    
+    public static void quicksort(ArrayList<Integer> a, int low, int high){
+        if(low<high){
+            int pivot = a.get(high);
+            int p = partition(a, low, high, pivot);
+            quicksort(a, low, p-1);
+            quicksort(a, p+1, high);
+        }
+    }
+    
+	public static void main(String[] args) {
+	    
+	    Scanner s = new Scanner(System.in);
+	    
+	    ArrayList<Integer> a = new ArrayList<Integer>();
+	    System.out.println("Enter no. of elements");
+	    int n=s.nextInt();
+	    System.out.println("Enter elements");
+	    for(int i=0; i<n; i++){
+	        a.add(s.nextInt());
+	    }
+	    
+	    quicksort(a, 0, n-1);
+	    System.out.println("Sorted array is: ");
+	    System.out.println(a);
+	}
+}
+
+# Insertion 
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Collections;
+
+public class Main
+{
+    public static void Insertion(ArrayList<Integer> a){
+        for(int i=1; i<a.size(); i++){
+            int key = a.get(i);
+            int j=i-1;
+            while(j>=0 && a.get(j)>key){
+                a.set(j+1, a.get(j));
+                j--;
+            }
+            a.set(j+1, key);
+        }
+    }
+    
+    
+    
+	public static void main(String[] args) {
+	    
+	    Scanner s = new Scanner(System.in);
+	    
+	    ArrayList<Integer> a = new ArrayList<Integer>();
+	    System.out.println("Enter no. of elements");
+	    int n=s.nextInt();
+	    System.out.println("Enter elements");
+	    for(int i=0; i<n; i++){
+	        a.add(s.nextInt());
+	    }
+	    
+	    Insertion(a);
+	    System.out.println("Sorted array is: ");
+	    System.out.println(a);
+	}
+}
+
+#selection
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Collections;
+
+public class Main
+{
+    public static void Selection(ArrayList<Integer> a){
+        for(int i=0; i<a.size()-1; i++){
+            int minIndex = i;
+            for(int j=i+1; j<a.size(); j++){
+                if(a.get(j) < a.get(minIndex)){
+                    minIndex = j;
+                }
+            }
+            Collections.swap(a, i, minIndex);
+        }
+        
+    }
+    
+    
+    
+	public static void main(String[] args) {
+	    
+	    Scanner s = new Scanner(System.in);
+	    
+	    ArrayList<Integer> a = new ArrayList<Integer>();
+	    System.out.println("Enter no. of elements");
+	    int n=s.nextInt();
+	    System.out.println("Enter elements");
+	    for(int i=0; i<n; i++){
+	        a.add(s.nextInt());
+	    }
+	    
+	    Selection(a);
+	    System.out.println("Sorted array is: ");
+	    System.out.println(a);
+	}
+}
+
+#BubbleSort
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Collections;
+
+public class Main
+{
+    public static void BubbleSort(ArrayList<Integer> a){
+        
+        for(int i=0; i<a.size()-1; i++){
+            for(int j=0; j<a.size()-i-1; j++){
+                if(a.get(j+1)<a.get(j)){
+                    Collections.swap(a, j, j+1);
+                }
+            }
+        }
+        
+    }
+    
+    
+    
+	public static void main(String[] args) {
+	    
+	    Scanner s = new Scanner(System.in);
+	    
+	    ArrayList<Integer> a = new ArrayList<Integer>();
+	    System.out.println("Enter no. of elements");
+	    int n=s.nextInt();
+	    System.out.println("Enter elements");
+	    for(int i=0; i<n; i++){
+	        a.add(s.nextInt());
+	    }
+	    
+	    BubbleSort(a);
+	    System.out.println("Sorted array is: ");
+	    System.out.println(a);
+	}
+}

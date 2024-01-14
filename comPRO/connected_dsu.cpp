@@ -64,7 +64,7 @@ int main()
 
     	pair<int, int> p = make_pair(min(u,v), max(u,v));
     	queries.push_back(p);
-    	dup_edges.remove(p);
+    	dup_edges.erase(p); //doubt
     }
 
     int conn_comps = n;

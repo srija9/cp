@@ -22,7 +22,7 @@ freopen("output.txt", "w", stdout);
 
 int main(int argc, char const *argv[])
 {
-	init_code();
+	//init_code();
 	int n,c;
 	cin>>n>>c;
 	int a[n];

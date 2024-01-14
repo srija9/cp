@@ -23,11 +23,11 @@ vector<int> child[1000];
 int main()
 {
     init_code();
-    int n = 100;
+    int n = 100;   // no of nodes
     for (int i = 0; i < n; i++) {
-    	int cn; //scanned from input
+    	int cn; //scanned from input (how many childs are there for that particular node)
     	for (int j = 0; j < cn; j++) {
-    		int child_of_i; // should be scanned from input
+    		int child_of_i; // should be scanned from input (val of that child)
     		child[i].push_back(child_of_i);
     	}
     }

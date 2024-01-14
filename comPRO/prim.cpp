@@ -18,11 +18,11 @@ freopen("output.txt", "w", stdout);
 #endif
 }
 
-vector <pair<int, int> > adjList[10000];
+vector <pair<int, int> > adjList[10000]; // adj[u] = {v, w}
 
 bool visited[10001];
 
-set<pair<int, pair<int, int> > edgeSet;
+set<pair<int, pair<int, int> >> edgeSet; // weight u v
 
 int do_prims(int u){
 	int weight_of_mst = 0;
@@ -54,12 +54,13 @@ int do_prims(int u){
 
 int main()
 {
-    init_code();
+    //init_code();
     int n;
     int m;
     cin>>n>>m;
     for(int i=0; i<m; ++i){
     	int u,v,w;
+		cin>>u>>v>>w;
     	adjList[u].push_back(make_pair(v, w));
     	adjList[v].push_back(make_pair(u, w));
     }
@@ -71,6 +72,7 @@ int main()
     	}
     }
 
+	cout<<mst;
 
     return 0;
 }
